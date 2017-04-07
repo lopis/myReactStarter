@@ -2,17 +2,37 @@
 My own react starter kit
 
 
-### Install dependencies
-```
-npm install
-```
+#### Install dependencies
 
-### Start in dev
-```
-npm start
-```
+`npm install`
 
-### Compile
+
+#### Start in dev
+
+`npm start`
+
+
+#### Compile
+
+`npm run compile`
+
+#### Project structure
+
 ```
-npm run compile
+app
+ ├── actions #one or more action files
+ ├── components
+     ├── Button
+     .  ├── Button.jsx
+     .  └── Button.test.js #unit and snapshot tests
+     └── ...
+ ├── containers
+ ├── reducers
+ └── index.js #entry point
+scripts
+ └── ... #can contain npm scripts
+www
+ ├── index.html #main html
+ └── bundle.js #compiled app (prod)
+server.js #serves dev app with no extra config needed
 ```
