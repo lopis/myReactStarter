@@ -1,12 +1,25 @@
 {
   "author": "lopis",
   "description": "My React Starter",
+  "version": "1.0.0",
   "keywords": [
     "react"
   ],
   "license": "public domain",
   "main": "index.js",
   "name": "my-react-starter",
+  "babel": {
+    "presets": [
+      "react",
+      "stage-0",
+      "next/babel"
+    ]
+  },
+  "scripts": {
+    "start": "node server.next.js",
+    "compile": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
@@ -15,8 +28,12 @@
     "express": "^4.15.2",
     "glamor": "^2.20.24",
     "glamorous": "^1.0.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "i18next": "^7.1.3",
+    "next": "^2.1.0",
+    "path-match": "^1.2.4",
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0",
+    "react-i18next": "^3.1.0",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.1",
@@ -24,10 +41,13 @@
     "webpack": "^2.3.3",
     "webpack-dev-middleware": "^1.10.1"
   },
-  "scripts": {
-    "start": "node server.js",
-    "compile": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "1.0.0"
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^19.0.2",
+    "react-test-renderer": "^15.5.4",
+    "standard": "^10.0.1"
+  }
 }

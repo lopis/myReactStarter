@@ -1,5 +1,6 @@
 # myReactStarter
-My own react starter kit
+
+My own react starter kit. It's using [Next.js](https://github.com/zeit/next.js) for server-side rendering which uses its own router `next/router`. For CSS, it's using [glamorous](https://github.com/paypal/glamorous) which is based on [glamor](https://github.com/threepointone/glamor).
 
 
 #### Install dependencies
@@ -20,19 +21,26 @@ My own react starter kit
 
 ```
 app
- ├── actions #one or more action files
+ ├── actions
+     ├── api.js
+     └── state.js
  ├── components
      ├── Button
-     .  ├── Button.jsx
+     .  ├── Button.js
      .  └── Button.test.js #unit and snapshot tests
      └── ...
  ├── containers
+     └── App.js #main component
  ├── reducers
- └── index.js #entry point
+     └── reducer.js
+ ├── routers
+     └── Router.js
+ └── pages
+     ├── index.js #next.js entry point
+     └── ...      #each file here is automatically a route
 scripts
  └── ... #can contain npm scripts
 www
  ├── index.html #main html
  └── bundle.js #compiled app (prod)
-server.js #serves dev app with no extra config needed
 ```

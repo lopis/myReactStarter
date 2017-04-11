@@ -1,12 +1,12 @@
 /*
  * action types
  */
-export const CLICK = "CLICK"
+export const CLICK = 'CLICK'
 
 /*
  * action creators
  */
-export function click() {
+export function click () {
   return {
     type: CLICK
   }

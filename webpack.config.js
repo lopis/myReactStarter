@@ -1,13 +1,13 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
-  context: path.join(__dirname, 'app'),
+  context: path.join(__dirname, ''),
   entry: [
-    './index.js',
+    './pages/index.js'
   ],
   output: {
     path: path.join(__dirname, 'www'),
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -18,12 +18,12 @@ module.exports = {
         query: {
           'presets': ['es2015', 'react']
         }
-      },
-    ],
+      }
+    ]
   },
   resolve: {
     modules: [
-      path.join(__dirname, 'node_modules'),
-    ],
-  },
-};
+      path.join(__dirname, 'node_modules')
+    ]
+  }
+}
