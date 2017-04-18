@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import glamorous from 'glamorous'
 import Head from 'next/head'
-import Link from 'next/link'
-import routes from '../routers/routes'
+import Link from '../components/Link'
+import { translate } from 'react-i18next';
 
 const Div = glamorous.div({
   color: '#333',
@@ -13,7 +13,8 @@ const Div = glamorous.div({
 
 class App extends Component {
   render () {
-    console.log();
+    const { t } = this.props;
+
     return (
       <Div className='App'>
         <Head>
@@ -25,18 +26,18 @@ class App extends Component {
         </div>
         <ul>
           <li>
-            <Link href={routes('index')}>
-              <a>index page</a>
+            <Link href="index">
+              {t('index')}
             </Link>
           </li>
           <li>
-            <Link href={routes('info')} prefetch>
-              <a>extra page</a>
+            <Link href="info" prefetch>
+              {t('extra')}
             </Link>
           </li>
           <li>
-            <Link href={routes('extra')} prefetch>
-              <a>missing page</a>
+            <Link href="extra" prefetch>
+              {t('missing')}
             </Link>
           </li>
         </ul>
@@ -53,4 +54,6 @@ const mapStateToProps = (state) => {
   return {}
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(
+  translate(['common', 'routes'])(App)
+)

@@ -33,11 +33,15 @@ app
      └── App.js #main component
  ├── reducers
      └── reducer.js
- ├── routers
-     └── Router.js
  └── pages
      ├── index.js #next.js entry point
      └── ...      #each file here is automatically a route
+static
+ └── locales
+     ├── en
+     .   ├── common.json #common translations
+     .   └── routes.json #routes translations
+     └── ...
 scripts
  └── ... #can contain npm scripts
 www
