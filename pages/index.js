@@ -8,13 +8,15 @@ import { I18nextProvider } from 'react-i18next'
 import App from '../app/containers/App'
 import reducer from '../app/reducers/reducer'
 import initStore from '../app/reducers/store'
-import i18n from '../app/i18n/i18n'
+import i18n, {getTranslation} from '../app/i18n/i18n'
+
 
 export default class PageHome extends Component {
   static async getInitialProps ({ req }) {
     const isServer = !!req
     const store = initStore(reducer, null, isServer)
-    const translations = {}
+
+    const translations = await getTranslation()
 
     return { initialState: store.getState(), isServer, translations }
   }
@@ -26,10 +28,10 @@ export default class PageHome extends Component {
 
   render () {
     return (
-      <I18nextProvider i18n={i18n}>
+      <I18nextProvider i18n={i18n(this.props.translations, this.props.isServer)}>
         <Provider store={this.store}>
           <App>
-            Hello World. This is the index page.
+            Hello World. This is the index page. SRR: {this.props.isServer ? 'true' : 'no'}
           </App>
         </ Provider>
       </I18nextProvider>

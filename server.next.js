@@ -9,6 +9,10 @@ const port = process.env.PORT || 3000
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
+const fetch = require('node-fetch');
+
+const glamor = require('glamor')
+glamor.speedy(true)
 
 function render (req, res, pathName, query) {
 

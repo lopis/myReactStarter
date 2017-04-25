@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import glamorous from 'glamorous'
+import { css } from 'glamor'
 import Head from 'next/head'
 import Link from '../components/Link'
 import { translate } from 'react-i18next';
@@ -11,33 +12,33 @@ const Div = glamorous.div({
   fontSize: 32
 })
 
+export const bgRed = css({
+  backgroundColor: 'indianred',
+})
+
 class App extends Component {
   render () {
     const { t } = this.props;
 
     return (
-      <Div className='App'>
-        <Head>
-          <title>My React Starter</title>
-          <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        </Head>
-        <div>
+      <Div>
+        <div className={bgRed}>
           {this.props.children}
         </div>
         <ul>
           <li>
             <Link href="index">
-              {t('index')}
+              {t('common:index')}
             </Link>
           </li>
           <li>
             <Link href="info" prefetch>
-              {t('extra')}
+              {t('common:extra')}
             </Link>
           </li>
           <li>
             <Link href="extra" prefetch>
-              {t('missing')}
+              {t('common:missing')}
             </Link>
           </li>
         </ul>
