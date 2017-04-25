@@ -30,7 +30,7 @@ function startI18n (translations, ssr, lng, ns) {
   }
 
   return i18n
-   .use(LanguageDetector)
+  //  .use(LanguageDetector)
    .use(i18nXHR)
    .init(options)
 }

@@ -23,12 +23,14 @@ export default class PageHome extends Component {
 
   constructor(props) {
     super(props)
+
     this.store = initStore(reducer, props.initialState, props.isServer)
+    this.i18n = i18n(this.props.translations, this.props.isServer)
   }
 
   render () {
     return (
-      <I18nextProvider i18n={i18n(this.props.translations, this.props.isServer)}>
+      <I18nextProvider i18n={this.i18n}>
         <Provider store={this.store}>
           <App>
             Hello World. This is the index page. SRR: {this.props.isServer ? 'true' : 'no'}
